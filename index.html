@@ -8,6 +8,7 @@
     <meta name="page_type" content="np-template-header-footer-from-plugin">
     <title>Home</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/shubhp2610/rotary_website/nicepage.css" media="screen">
+    <script src="https://www.gstatic.com/firebasejs/7.14.5/firebase.js"></script>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/shubhp2610/rotary_website/Home.css" media="screen">
     <script class="u-script" type="text/javascript" src="https://cdn.jsdelivr.net/gh/shubhp2610/rotary_website/jquery.js" defer=""></script>
     <script class="u-script" type="text/javascript" src="https://cdn.jsdelivr.net/gh/shubhp2610/rotary_website/nicepage.js" defer=""></script>
@@ -202,7 +203,7 @@ throughout the day. </p>
                     <div class="u-container-layout u-valign-top u-container-layout-3">
                       <h2 class="u-custom-font u-text u-text-grey-90 u-text-4">Contact form</h2>
                       <div class="u-expanded-width-sm u-expanded-width-xs u-form u-form-1">
-                        <form action="#" method="POST" class="u-clearfix u-form-spacing-10 u-form-vertical u-inner-form" style="padding: 10px" source="custom" name="form-2">
+                        <form action="#" id="contactForm" method="POST" class="u-clearfix u-form-spacing-10 u-form-vertical u-inner-form" style="padding: 10px" source="custom" name="form-2">
                           <div class="u-form-group u-form-name">
                             <label for="name-da97" class="u-form-control-hidden u-label">Name</label>
                             <input type="text" placeholder="Enter your Name" id="name-da97" name="name" class="u-border-no-bottom u-border-no-left u-border-no-right u-border-no-top u-grey-5 u-input u-input-rectangle" required="">
@@ -234,6 +235,68 @@ throughout the day. </p>
       </div>
     </section>
     
-    
+    <script>
+    // Initialize Firebase
+var config = {
+    apiKey: "AIzaSyAfOpgXSMbqnKvZuiejl0eN9jNsfAITihU",
+    authDomain: "rotary-unjha-prod.firebaseapp.com",
+    databaseURL: "https://rotary-unjha-prod-default-rtdb.asia-southeast1.firebasedatabase.app",
+    projectId: "rotary-unjha-prod",
+    storageBucket: "rotary-unjha-prod.appspot.com",
+    messagingSenderId: "721772974155",
+    appId: "1:721772974155:web:928d11e6bfda1fa74e7dce",
+    measurementId: "G-7QQ654HX7H"
+};
+firebase.initializeApp(config);
+
+// Reference messages collection
+var messagesRef = firebase.database().ref('messages');
+
+// Listen for form submit
+document.getElementById('contactForm').addEventListener('submit', submitForm);
+
+// Submit form
+function submitForm(e){
+  e.preventDefault();
+
+  //Get value
+  var name = getInputVal('name-da97');
+  console.log(name);
+  var email = getInputVal('email-da97');
+  var message = getInputVal('message-da97');
+
+
+  // Save message
+  saveMessage(name, email, message);
+
+  // Show alert
+  document.querySelector('.alert').style.display = 'block';
+
+  // Hide alert after 3 seconds
+  setTimeout(function(){
+    document.querySelector('.alert').style.display = 'none';
+  },3000);
+
+  // Clear form
+  document.getElementById('contactForm').reset();
+}
+
+// Function to get form value
+function getInputVal(id){
+  return document.getElementById(id).value;
+}
+
+// Save message to firebase
+function saveMessage(name, email, message){
+  var newMessageRef = messagesRef.push();
+  newMessageRef.set({
+    name: name,
+email: email,
+    message: message
+  });
+}
+
+    </script>
+
   </body>
 </html>
