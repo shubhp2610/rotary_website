@@ -31,7 +31,7 @@
     <meta property="og:title" content="Home">
     <meta property="og:type" content="website">
   </head>
-  <body class="u-body"><header class="u-clearfix u-header u-header" id="sec-dfd3"><div class="u-clearfix u-sheet u-sheet-1">
+  <body data-home-page="Home.html" data-home-page-title="Home" class="u-body"><header class="u-clearfix u-header u-header" id="sec-dfd3"><div class="u-clearfix u-sheet u-sheet-1">
         <a href="https://nicepage.com" class="u-image u-logo u-image-1" data-image-width="593" data-image-height="222">
           <img src="images/rotary-logo.svg" class="u-logo-image u-logo-image-1">
         </a>
@@ -144,54 +144,56 @@ throughout the day.</p>
       </div>
     </section>
     <section class="u-clearfix u-custom-color-3 u-section-5" id="sec-89ae">
-      <div class="u-clearfix u-layout-wrap u-layout-wrap-1">
-        <div class="u-gutter-0 u-layout">
-          <div class="u-layout-row">
-            <div class="u-size-30">
-              <div class="u-layout-col">
-                <div class="u-container-style u-layout-cell u-size-60 u-layout-cell-1">
-                  <div class="u-container-layout u-valign-bottom-xs u-container-layout-1">
-                    <h2 class="u-custom-font u-text u-text-white u-text-1">Contact form</h2>
-                    <div class="u-expanded-width-sm u-form u-form-1">
-                      <form action="#" method="POST" class="u-clearfix u-form-spacing-10 u-form-vertical u-inner-form" style="padding: 10px" source="custom" name="form-2">
-                        <div class="u-form-group u-form-name">
-                          <label for="name-da97" class="u-form-control-hidden u-label">Name</label>
-                          <input type="text" placeholder="Enter your Name" id="name-da97" name="name" class="u-border-no-bottom u-border-no-left u-border-no-right u-border-no-top u-grey-5 u-input u-input-rectangle" required="">
-                        </div>
-                        <div class="u-form-email u-form-group">
-                          <label for="email-da97" class="u-form-control-hidden u-label">Email</label>
-                          <input type="email" placeholder="Enter a valid email address" id="email-da97" name="email" class="u-border-no-bottom u-border-no-left u-border-no-right u-border-no-top u-grey-5 u-input u-input-rectangle" required="">
-                        </div>
-                        <div class="u-form-group u-form-message">
-                          <label for="message-da97" class="u-form-control-hidden u-label">Message</label>
-                          <textarea placeholder="Enter your message" rows="4" cols="50" id="message-da97" name="message" class="u-border-no-bottom u-border-no-left u-border-no-right u-border-no-top u-grey-5 u-input u-input-rectangle" required=""></textarea>
-                        </div>
-                        <div class="u-form-group u-form-submit">
-                          <a href="#" class="u-border-none u-btn u-btn-submit u-button-style u-custom-color-2 u-btn-1">Submit</a>
-                          <input type="submit" value="submit" class="u-form-control-hidden">
-                        </div>
-                        <div class="u-form-send-message u-form-send-success"> Thank you! Your message has been sent. </div>
-                        <div class="u-form-send-error u-form-send-message"> Unable to send your message. Please fix errors then try again. </div>
-                        <input type="hidden" value="" name="recaptchaResponse">
-                      </form>
+      <div class="u-clearfix u-sheet u-sheet-1">
+        <div class="u-clearfix u-expanded-width u-layout-wrap u-layout-wrap-1">
+          <div class="u-gutter-0 u-layout">
+            <div class="u-layout-row">
+              <div class="u-size-30">
+                <div class="u-layout-col">
+                  <div class="u-container-style u-layout-cell u-size-60 u-layout-cell-1">
+                    <div class="u-container-layout u-valign-bottom-xs u-container-layout-1">
+                      <h2 class="u-custom-font u-text u-text-white u-text-1">Contact form</h2>
+                      <div class="u-expanded-width-sm u-form u-form-1">
+                        <form action="#" id="contactForm" method="POST" class="u-clearfix u-form-spacing-10 u-form-vertical u-inner-form" style="padding: 10px" source="custom" name="form-2">
+                          <div class="u-form-group u-form-name">
+                            <label for="name-da97" class="u-form-control-hidden u-label">Name</label>
+                            <input type="text" placeholder="Enter your Name" id="name-da97" name="name" class="u-border-no-bottom u-border-no-left u-border-no-right u-border-no-top u-grey-5 u-input u-input-rectangle" required="">
+                          </div>
+                          <div class="u-form-email u-form-group">
+                            <label for="email-da97" class="u-form-control-hidden u-label">Email</label>
+                            <input type="email" placeholder="Enter a valid email address" id="email-da97" name="email" class="u-border-no-bottom u-border-no-left u-border-no-right u-border-no-top u-grey-5 u-input u-input-rectangle" required="">
+                          </div>
+                          <div class="u-form-group u-form-message">
+                            <label for="message-da97" class="u-form-control-hidden u-label">Message</label>
+                            <textarea placeholder="Enter your message" rows="4" cols="50" id="message-da97" name="message" class="u-border-no-bottom u-border-no-left u-border-no-right u-border-no-top u-grey-5 u-input u-input-rectangle" required=""></textarea>
+                          </div>
+                          <div class="u-form-group u-form-submit">
+                            <a href="#" class="u-border-none u-btn u-btn-submit u-button-style u-custom-color-2 u-btn-1">Submit</a>
+                            <input type="submit" value="submit" class="u-form-control-hidden">
+                          </div>
+                          <div class="u-form-send-message u-form-send-success"> Thank you! Your message has been sent. </div>
+                          <div class="u-form-send-error u-form-send-message"> Unable to send your message. Please fix errors then try again. </div>
+                          <input type="hidden" value="" name="recaptchaResponse">
+                        </form>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
-            <div class="u-size-30">
-              <div class="u-layout-col">
-                <div class="u-container-style u-layout-cell u-size-60 u-layout-cell-2">
-                  <div class="u-container-layout u-valign-bottom-lg u-valign-bottom-md u-valign-bottom-sm u-valign-bottom-xl u-container-layout-2">
-                    <h2 class="u-custom-font u-text u-text-default-lg u-text-default-md u-text-default-sm u-text-default-xl u-text-2">Location</h2>
-                    <p class="u-custom-font u-heading-font u-text u-text-3">
-                      <a href="https://goo.gl/maps/a13jePbk8c2mJWme9" class="u-active-none u-border-none u-btn u-button-link u-button-style u-hover-none u-none u-text-grey-10 u-btn-2" target="_blank"> Narayanbha Bhagat rotary bhavan </a><b>
-                        <br></b>
-                      <a href="https://goo.gl/maps/a13jePbk8c2mJWme9" class="u-active-none u-border-none u-btn u-button-link u-button-style u-hover-none u-none u-text-grey-10 u-btn-3" target="_blank">2, Gandhi Rd, Shrimali Vas, Gandhi Rd, Shrimali Vas, Baharmadh, Unjha, Gujarat 384170</a>&nbsp;&nbsp;
-                    </p>
-                    <div class="u-container-style u-expanded-width-xs u-group u-shape-rectangle u-white u-group-1">
-                      <div class="u-container-layout u-container-layout-3">
-                        <img class="u-align-center u-image u-image-default u-image-1" src="images/rotary-logo.svg" alt="" data-image-width="593" data-image-height="222">
+              <div class="u-size-30">
+                <div class="u-layout-col">
+                  <div class="u-container-style u-layout-cell u-size-60 u-layout-cell-2">
+                    <div class="u-container-layout u-container-layout-2">
+                      <h2 class="u-custom-font u-text u-text-default-lg u-text-default-md u-text-default-sm u-text-default-xl u-text-2">Location</h2>
+                      <p class="u-custom-font u-heading-font u-text u-text-3">
+                        <a href="https://goo.gl/maps/a13jePbk8c2mJWme9" class="u-active-none u-border-none u-btn u-button-link u-button-style u-hover-none u-none u-text-grey-10 u-btn-2" target="_blank"> Narayanbha Bhagat rotary bhavan </a><b>
+                          <br></b>
+                        <a href="https://goo.gl/maps/a13jePbk8c2mJWme9" class="u-active-none u-border-none u-btn u-button-link u-button-style u-hover-none u-none u-text-grey-10 u-btn-3" target="_blank">2, Gandhi Rd, Shrimali Vas, Gandhi Rd, Shrimali Vas, Baharmadh, Unjha, Gujarat 384170</a>&nbsp;&nbsp;
+                      </p>
+                      <div class="u-container-style u-expanded-width-xs u-group u-shape-rectangle u-white u-group-1">
+                        <div class="u-container-layout u-container-layout-3">
+                          <img class="u-align-center u-image u-image-default u-image-1" src="images/rotary-logo.svg" alt="" data-image-width="593" data-image-height="222">
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -205,16 +207,68 @@ throughout the day.</p>
     
     
     
-    <section class="u-backlink u-clearfix u-grey-80">
-      <a class="u-link" href="https://nicepage.com/website-templates" target="_blank">
-        <span>Website Templates</span>
-      </a>
-      <p class="u-text">
-        <span>created with</span>
-      </p>
-      <a class="u-link" href="" target="_blank">
-        <span>Website Builder Software</span>
-      </a>. 
-    </section>
+      <script src="https://www.gstatic.com/firebasejs/7.14.5/firebase.js"></script>
+       <script>
+    // Initialize Firebase
+var config = {
+    apiKey: "AIzaSyAfOpgXSMbqnKvZuiejl0eN9jNsfAITihU",
+    authDomain: "rotary-unjha-prod.firebaseapp.com",
+    databaseURL: "https://rotary-unjha-prod-default-rtdb.asia-southeast1.firebasedatabase.app",
+    projectId: "rotary-unjha-prod",
+    storageBucket: "rotary-unjha-prod.appspot.com",
+    messagingSenderId: "721772974155",
+    appId: "1:721772974155:web:928d11e6bfda1fa74e7dce",
+    measurementId: "G-7QQ654HX7H"
+};
+firebase.initializeApp(config);
+
+// Reference messages collection
+var messagesRef = firebase.database().ref('messages');
+
+// Listen for form submit
+document.getElementById('contactForm').addEventListener('submit', submitForm);
+
+// Submit form
+function submitForm(e){
+  e.preventDefault();
+
+  //Get value
+  var name = getInputVal('name-da97');
+  console.log(name);
+  var email = getInputVal('email-da97');
+  var message = getInputVal('message-da97');
+
+
+  // Save message
+  saveMessage(name, email, message);
+
+  // Show alert
+  document.querySelector('.alert').style.display = 'block';
+
+  // Hide alert after 3 seconds
+  setTimeout(function(){
+    document.querySelector('.alert').style.display = 'none';
+  },3000);
+
+  // Clear form
+  document.getElementById('contactForm').reset();
+}
+
+// Function to get form value
+function getInputVal(id){
+  return document.getElementById(id).value;
+}
+
+// Save message to firebase
+function saveMessage(name, email, message){
+  var newMessageRef = messagesRef.push();
+  newMessageRef.set({
+    name: name,
+email: email,
+    message: message
+  });
+}
+
+    </script>
   </body>
 </html>
