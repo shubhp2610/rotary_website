@@ -31,7 +31,7 @@
     <meta property="og:title" content="Home">
     <meta property="og:type" content="website">
   </head>
-  <body class="u-body"><header class="u-clearfix u-header u-header" id="sec-dfd3"><div class="u-clearfix u-sheet u-sheet-1">
+  <body data-home-page="Home.html" data-home-page-title="Home" class="u-body"><header class="u-clearfix u-header u-header" id="sec-dfd3"><div class="u-clearfix u-sheet u-sheet-1">
         <a href="https://nicepage.com" class="u-image u-logo u-image-1" data-image-width="593" data-image-height="222">
           <img src="images/rotary-logo.svg" class="u-logo-image u-logo-image-1">
         </a>
@@ -171,7 +171,7 @@ throughout the day.</p>
                           <input type="submit" value="submit" class="u-form-control-hidden">
                         </div>
                         <div class="u-form-send-message u-form-send-success"> Thank you! Your message has been sent. </div>
-                        <div class="u-form-send-error u-form-send-message"> Unable to send your message. Please fix errors then try again. </div>
+                        <div class="u-form-send-error u-form-send-message"> Thank you! Your message has been sent.</div>
                         <input type="hidden" value="" name="recaptchaResponse">
                       </form>
                     </div>
@@ -204,17 +204,68 @@ throughout the day.</p>
     </section>
     
     
-    
-    <section class="u-backlink u-clearfix u-grey-80">
-      <a class="u-link" href="https://nicepage.com/website-templates" target="_blank">
-        <span>Website Templates</span>
-      </a>
-      <p class="u-text">
-        <span>created with</span>
-      </p>
-      <a class="u-link" href="" target="_blank">
-        <span>Website Builder Software</span>
-      </a>. 
-    </section>
+          <script src="https://www.gstatic.com/firebasejs/7.14.5/firebase.js"></script>
+       <script>
+    // Initialize Firebase
+var config = {
+    apiKey: "AIzaSyAfOpgXSMbqnKvZuiejl0eN9jNsfAITihU",
+    authDomain: "rotary-unjha-prod.firebaseapp.com",
+    databaseURL: "https://rotary-unjha-prod-default-rtdb.asia-southeast1.firebasedatabase.app",
+    projectId: "rotary-unjha-prod",
+    storageBucket: "rotary-unjha-prod.appspot.com",
+    messagingSenderId: "721772974155",
+    appId: "1:721772974155:web:928d11e6bfda1fa74e7dce",
+    measurementId: "G-7QQ654HX7H"
+};
+firebase.initializeApp(config);
+
+// Reference messages collection
+var messagesRef = firebase.database().ref('messages');
+
+// Listen for form submit
+document.getElementById('contactForm').addEventListener('submit', submitForm);
+
+// Submit form
+function submitForm(e){
+  e.preventDefault();
+
+  //Get value
+  var name = getInputVal('name-da97');
+  console.log(name);
+  var email = getInputVal('email-da97');
+  var message = getInputVal('message-da97');
+
+
+  // Save message
+  saveMessage(name, email, message);
+
+  // Show alert
+  document.querySelector('.alert').style.display = 'block';
+
+  // Hide alert after 3 seconds
+  setTimeout(function(){
+    document.querySelector('.alert').style.display = 'none';
+  },3000);
+
+  // Clear form
+  document.getElementById('contactForm').reset();
+}
+
+// Function to get form value
+function getInputVal(id){
+  return document.getElementById(id).value;
+}
+
+// Save message to firebase
+function saveMessage(name, email, message){
+  var newMessageRef = messagesRef.push();
+  newMessageRef.set({
+    name: name,
+email: email,
+    message: message
+  });
+}
+
+    </script>
   </body>
 </html>
